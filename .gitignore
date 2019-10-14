@@ -1,0 +1,15 @@
+#virtualenv
+seg_env/
+
+# macOS directory file
+.DS_Store
+
+# Editor settings
+.vscode/
+
+# Python files
+__pycache__/
+*.pyc
+
+# Dataset
+cityscapes/
