@@ -34,4 +34,4 @@ def get_data(folder):
         output_types=(tf.float32, tf.float32),
         output_shapes=(tf.TensorShape([128, 256, 3]), tf.TensorShape([128, 256, 3]))
     )
-    return ds.batch(16, drop_remainder=True)
+    return ds
