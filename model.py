@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 class UNet(tf.keras.Model):
-    def __init__(self):
+    def __init__(self, num_classes):
         super(UNet, self).__init__(name='UNet')
 
         self.block1 = tf.keras.Sequential([
@@ -30,7 +30,8 @@ class UNet(tf.keras.Model):
         self.block5 = tf.keras.Sequential([
             tf.keras.layers.Conv2D(64, 3, activation='relu', padding='same'),
             tf.keras.layers.Conv2D(64, 3, activation='relu', padding='same'),
-            tf.keras.layers.Conv2D(3, 3, activation='relu', padding='same'),
+            tf.keras.layers.Conv2D(num_classes, 3, activation='relu', padding='same'),
+
         ])
 
     def call(self, inputs):
